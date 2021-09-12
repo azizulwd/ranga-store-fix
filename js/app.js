@@ -46,8 +46,7 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  const totalAmount = (parseFloat(total.toFixed(2)));
-  document.getElementById(id).innerText = totalAmount;
+  document.getElementById(id).innerText = (parseFloat(total.toFixed(2)));
 };
 
 // set innerText function
@@ -58,18 +57,17 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
-  const priceConvertedTax = parseFloat(priceConverted.toFixed(2));
-  if (priceConvertedTax > 200) {
+  if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConvertedTax * 0.2);
+    setInnerText("total-tax", parseFloat((priceConverted * 0.2).toFixed(2)));
   }
-  if (priceConvertedTax > 400) {
+  if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConvertedTax * 0.3);
+    setInnerText("total-tax", parseFloat((priceConverted * 0.2).toFixed(2)));
   }
-  if (priceConvertedTax > 500) {
+  if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", priceConvertedTax * 0.4);
+    setInnerText("total-tax", parseFloat((priceConverted * 0.2).toFixed(2)));
   }
 };
 
