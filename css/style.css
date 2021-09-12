@@ -68,6 +68,12 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+#rating_count{
+  color: orangered;
+}
+#rating_average{
+  color: orange;
+}
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
